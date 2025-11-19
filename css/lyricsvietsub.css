@@ -1,1 +1,135 @@
+/* Tiêu đề */
+.topbar {
+  display: flex;
+  justify-content: center; /* căn giữa chữ + nút */
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+  position: relative;
+}
 
+.fancy-title {
+  font-size: clamp(24px,5vw,36px);
+  font-weight: 800;
+  text-align: center;
+  color: #ffffff;            /* trắng rõ */
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.7); /* tạo bóng nổi */
+  position: relative;
+}
+
+/* Animation bướm ẩn hiện */
+@keyframes flutter {
+  0%,100% { opacity: 0.3; transform: translateY(0) rotate(0deg); }
+  50% { opacity: 1; transform: translateY(-6px) rotate(10deg); }
+}
+
+.fancy-title .butterfly {
+  display: inline-block;
+  animation: flutter 3s ease-in-out infinite alternate;
+  margin-left: 6px;
+  font-size: 28px;
+}
+
+/* Animation trái tim ẩn hiện */
+@keyframes floatHeart {
+  0%,100% { opacity: 0.3; transform: translateY(0) rotate(0deg); }
+  50% { opacity: 1; transform: translateY(-6px) rotate(-10deg); }
+}
+
+.fancy-title .heart {
+  display: inline-block;
+  animation: floatHeart 2.5s ease-in-out infinite alternate;
+  margin-left: 6px;
+  font-size: 28px;
+}
+
+/* Màn hình xem nhạc */
+.player {
+  background: var(--glass);
+  padding: 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.04);
+  max-width: 1000px;   /* giới hạn chiều ngang */
+  width: 100%;
+  margin: 0 auto;      /* căn giữa */
+  box-sizing: border-box;
+}
+
+.player video,
+.player audio {
+  width: 100%;          /* đầy container, không full màn hình */
+  max-height: 500px;    /* giới hạn chiều cao video */
+  border-radius: 10px;
+  background: black;
+}
+
+/* Căn giữa controls + playlist */
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.playlist {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+}
+
+.track {
+  width: 100%;
+  max-width: 700px;
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.track.active {
+  position: relative;
+  border: 2px solid transparent;
+}
+
+.track.active::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  padding: 2px;
+  background: linear-gradient(120deg,#00d2ff,#4fffac,#00d2ff);
+  background-size: 200% 200%;
+  animation: borderRun 2s linear infinite;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+}
+
+@keyframes borderRun {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+/* Lyrics toggle */
+.lyrics-box {
+  max-height: 120px;
+  overflow: hidden;
+  position: relative;
+}
+
+.lyrics-box.expanded {
+  max-height: none;
+}
+
+.toggle-lyrics {
+  margin-top: 8px;
+  cursor: pointer;
+  color: #6bc3ff;
+  text-decoration: underline;
+  font-size: 14px;
+  user-select: none;
+}
