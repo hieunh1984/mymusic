@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nhạc mp3 — Âm nhạc không biên giới</title>
+<link rel="stylesheet" href="styles.css">
+<script src="common.js" defer></script>
+</head>
+<body>
+<div class="container">
+<div class="topbar">
+<h2>Nhạc mp3</h2>
+<div><a class="btn" href="index.html">← Về trang chính</a></div>
+</div>
+
+
+<div class="player">
+<audio id="mp3Player" controls style="width:100%"></audio>
+<div class="controls">
+<button class="btn" id="mp3Prev">Prev</button>
+<button class="btn" id="mp3Next">Next</button>
+<button class="btn" id="mp3Shuffle">Ngẫu nhiên</button>
+</div>
+<div class="playlist" id="mp3List"></div>
+</div>
+</div>
+
+
+<script>
+const mp3s = [
+{title:'MP3 Mẫu A',src:'media/song1.mp3'},
+{title:'MP3 Mẫu B',src:'media/song2.mp3'}
+];
+const mp3Player = document.getElementById('mp3Player');
+const mp3List = document.getElementById('mp3List');
+let idx=0;
+mp3s.forEach((t,i)=>{const el=document.createElement('div');el.className='track';el.innerHTML=`<div><div class="title">${t.title}</div><div class="meta">${t.src}</div></div><div>▶</div>`;el.addEventListener('click',()=>{play(i)});mp3List.appendChild(el)});
+function play(i){idx=i;mp3Player.src=mp3s[i].src;mp3Player.play(); highlight();}
+function highlight(){qa('.track').forEach((el,i)=>el.classList.toggle('active',i===idx));}
+function next(){idx=(idx+1)%mp3s.length;play(idx)}
+function prev(){idx=(idx-1+mp3s.length)%mp3s.length;play(idx)}
+function shuffle(){idx=Math.floor(Math.random()*mp3s.length);play(idx)}
+mp3Player.onended = next;
+document.getElementById('mp3Next').addEventListener('click',next);
+document.getElementById('mp3Prev').addEventListener('click',prev);
+document.getElementById('mp3Shuffle').addEventListener('click',shuffle);
+// autostart first
+if(mp3s.length) play(0);
+function qa(sel){return Array.from(document.querySelectorAll(sel))}
+</script>
+</body>
+</html>

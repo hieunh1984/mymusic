@@ -1,0 +1,52 @@
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Âm nhạc không biên giới</title>
+<link rel="stylesheet" href="style.css">
+<script src="common.js" defer></script>
+</head>
+<body>
+<header class="site-header">
+<h1>Âm nhạc không biên giới</h1>
+<p class="tagline">Nơi âm nhạc kết nối cảm xúc</p>
+</header>
+
+
+<main class="grid">
+<a class="card" href="lyricsvietsub.html">
+<h2>Nhạc lyrics + vietsub</h2>
+<p>Playlists, lyrics và phụ đề tiếng Việt. Trình chơi có Play / Pause / Next / Prev / Replay / Sequential / Shuffle.</p>
+</a>
+
+
+<a class="card" href="videos.html">
+<h2>Videos nhạc</h2>
+<p>Trang dành cho video nhạc (mp4 / webm).</p>
+</a>
+
+
+<a class="card" href="mp3.html">
+<h2>Nhạc mp3</h2>
+<p>Trang chỉ cho bật nhạc mp3 (danh sách, phát liên tiếp hoặc ngẫu nhiên).</p>
+</a>
+
+
+<a class="card" href="clips.html">
+<h2>Clips của tôi</h2>
+<p>Đưa lên clip tự quay / remix / demo của bạn.</p>
+</a>
+</main>
+
+
+<footer class="site-footer">
+<small>© <span id="year"></span> Âm nhạc không biên giới</small>
+</footer>
+
+
+<script src="common.js" defer></script>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
