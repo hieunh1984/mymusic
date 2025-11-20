@@ -108,4 +108,66 @@ body{font-family:Inter, system-ui, sans-serif;margin:0;background:linear-gradien
 }
 
 
-@media (max-width:600px){.controls{flex-wrap:wrap}}
+/* ----- MOBILE OPTIMIZATION ----- */
+@media (max-width: 600px) {
+
+  body {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden; /* NGĂN TRÀN NGANG */
+  }
+
+  .grid {
+    padding: 12px;
+    gap: 12px;
+    grid-template-columns: 1fr; /* 1 cột cho mobile */
+  }
+
+  .container {
+    padding: 12px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .player {
+    padding: 14px;
+  }
+
+  .controls {
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .playlist {
+    width: 100%;
+    padding: 0;
+    margin-top: 16px;
+  }
+
+  .track {
+    width: 100%;
+    max-width: 100%; /* đảm bảo không tràn */
+    padding: 12px;
+    gap: 10px;
+    flex-direction: column; /* Cho mobile dễ nhìn */
+    align-items: flex-start;
+  }
+
+  .track span,
+  .meta {
+    font-size: 14px;
+  }
+
+  .topbar {
+    flex-direction: column;
+    gap: 8px;
+    align-items: stretch;
+  }
+
+  .search {
+    width: 100%;
+    font-size: 15px;
+    padding: 10px;
+  }
+
+}
