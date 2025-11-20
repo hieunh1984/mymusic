@@ -3,7 +3,8 @@ const playlist = [
   {id:1,title:"Alizée - J'ai Pas Vingt Ans - Tour de france",src:'videos/chuatron20.mp4',type:'video'},
   {id:2,title:"Nothing's Gonna Change My Love For You - Music Travel Love ft. Bugoy Drilon",src:'videos/nothing.mp4',type:'video'},
   {id:3,title:"Alizée - L'Alizé",src:'videos/congioAlize.mp4',type:'video'},
-  {id:4,title:'Alizée - À contre-courant',src:'videos/nguocdong.mp4',type:'video'}
+  {id:4,title:"Only Time - Enya",src:'videos/onlytime.mp4',type:'video'},
+  {id:5,title:'Alizée - À contre-courant',src:'videos/nguocdong.mp4',type:'video'}
 ];
 
 let current = 0;
