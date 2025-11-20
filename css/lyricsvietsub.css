@@ -67,14 +67,14 @@
 .controls {
   display: flex;
   justify-content: center;
-  gap: 15px;             /* khoảng cách giữa nút rộng hơn */
+  gap: 10px;             /* khoảng cách giữa nút rộng hơn */
   flex-wrap: wrap;
   margin-top: 10px;
 }
 
 .controls button {
-  padding: 12px 20px;       /* kích thước nút */
-  font-size: 32px;           /* emoji sẽ to theo nút */
+  padding: 10px 14px;       /* kích thước nút */
+  font-size: 22px;           /* emoji sẽ to theo nút */
   border: none;
   border-radius: 8px;
   background-color: #007bff;
@@ -92,8 +92,8 @@
 /* Responsive cho mobile */
 @media (max-width: 768px) {
   .controls button {
-    padding: 16px 24px;
-    font-size: 40px;
+  padding: 10px 14px;       /* kích thước nút */
+  font-size: 22px;           /* emoji sẽ to theo nút */
   }
 }
 

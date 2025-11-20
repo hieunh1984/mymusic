@@ -1,0 +1,319 @@
+:root {
+  --bg: #f4f6f8;
+  --card: rgba(255,255,255,0.5);  /* semi-transparent để thấy background */
+  --muted: #6b7280;
+  --accent: #10b981;
+  font-family: Inter, Arial, sans-serif;
+}
+
+/* Background mặc định cho desktop */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: url('../icon/hinhnen1.webp') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+/* Background riêng cho mobile */
+@media screen and (max-width: 768px) {
+  body {
+    background: url('../icon/hinhnen2.jpg') no-repeat center center fixed;
+    background-size: cover;
+  }
+}
+/* Panel chung */
+.side-panel {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none; /* không chặn tương tác nội dung */
+  z-index: 9999;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff,
+               0 0 20px #ffd700, 0 0 30px #ffd700,
+               0 0 40px #ffd700;
+  animation: glow 2.5s infinite alternate, sparkle 1.5s infinite;
+  text-align: center;
+  font-size: 20px;
+  line-height: 1.2em; /* khoảng cách dòng giữa các chữ đứng */
+}
+
+/* Ép chữ từng chữ đứng từ trên xuống */
+.side-panel span {
+  display: block;
+}
+
+/* Vị trí panel trái/phải */
+.side-panel.left {
+  left: 0;
+  padding-left: 5px;
+}
+
+.side-panel.right {
+  right: 0;
+  padding-right: 5px;
+}
+
+/* Glow animation */
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff,
+                 0 0 20px #ffd700, 0 0 30px #ffd700,
+                 0 0 40px #ffd700;
+  }
+  50% {
+    text-shadow: 0 0 8px #fff, 0 0 15px #fff,
+                 0 0 25px #ffea00, 0 0 35px #ffea00,
+                 0 0 45px #ffea00;
+  }
+  100% {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff,
+                 0 0 20px #ffd700, 0 0 30px #ffd700,
+                 0 0 40px #ffd700;
+  }
+}
+
+/* Sparkle nhấp nháy nhẹ */
+@keyframes sparkle {
+  0%,100% { filter: brightness(1); }
+  50% { filter: brightness(1.5); }
+}
+
+/* Responsive trên mobile */
+@media screen and (max-width: 768px) {
+  .side-panel {
+    font-size: 16px;
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+}
+
+/* logo Falun */
+@keyframes spin-9-back-9 {
+  0%    { transform: rotate(0deg); }
+  25%   { transform: rotate(3240deg); }  /* 9 vòng * 360° */
+  50%   { transform: rotate(0deg); }     /* 9 vòng ngược */
+  75%   { transform: rotate(-3240deg); } /* 9 vòng thuận tiếp theo */
+  100%  { transform: rotate(0deg); }     /* lặp lại */
+}
+
+#right-btn {
+  width: 60px;           /* thêm kích thước */
+  height: 60px;          /* thêm kích thước */
+  top: 20px;
+  right: 20px;
+  background: url('icon/falun-logo.jpg') no-repeat center/contain;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  animation: spin-9-back-9 36s linear infinite;
+  transform-origin: center center;  /* quan trọng để xoay đúng tâm */
+  border-radius: 50%;  /* optional, nếu muốn viền tròn */
+}
+
+
+/* Container + Topbar */
+.container {
+      margin: 0;   /* bỏ margin mặc định */
+  padding: 0;
+  max-width: 1000px;
+  margin: 18px auto;
+
+}
+
+.topbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+  position: relative;
+  margin-top: 0;       /* ép sát nóc */
+}
+
+/* Fancy title với phát sáng + lấp lánh */
+.fancy-title {
+      margin: 0;   /* bỏ margin mặc định */
+  padding: 0;
+  font-size: clamp(24px,5vw,36px);
+  font-weight: 800;
+  text-align: center;
+  color: #f1e425;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff,
+               0 0 20px #ffd700, 0 0 30px #ffd700,
+               0 0 40px #13cae2, 0 0 55px #ff0015,
+               0 0 75px #ffd700;
+  position: relative;
+  animation: glow 1.5s infinite alternate, sparkle 3s infinite;
+}
+
+/* Phát sáng nhấp nháy */
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff,
+                 0 0 20px #ff0101, 0 0 30px #ffd700,
+                 0 0 40px #ffd700, 0 0 55px #ffd700,
+                 0 0 75px #f107f1;
+  }
+  50% {
+    text-shadow: 0 0 8px #fff, 0 0 15px #fff,
+                 0 0 25px #ffea00, 0 0 35px #ffea00,
+                 0 0 45px #ffea00, 0 0 60px #ffea00,
+                 0 0 80px #5f1bdd;
+  }
+  100% {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff,
+                 0 0 20px #ffd700, 0 0 30px #ffd700,
+                 0 0 40px #ffd700, 0 0 55px #ffd700,
+                 0 0 75px #19eb12;
+  }
+}
+
+/* Hiệu ứng lấp lánh (random spark) */
+@keyframes sparkle {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.5); }
+}
+
+
+.label {
+
+     text-align: center;
+}
+
+.player-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  background: var(--card);
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(16,24,40,0.06);
+  gap: 12px;
+  align-items: center;
+}
+
+.level-group .label {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.levels {
+  display: flex;
+  gap: 8px;
+}
+
+.level-btn {
+  border: 1px solid #e6e9ee;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  background: transparent;
+  font-weight: 600;
+}
+
+.level-btn[aria-pressed="true"] {
+  background: #fff;
+  box-shadow: inset 0 0 0 2px rgba(16,185,129,0.12);
+}
+
+/* Khung tiêu đề bài đang phát */
+.title-box {
+    margin-top: 12px;
+    padding: 10px 14px;
+    background: #f2f6ff;
+    border-radius: 8px;
+    border-left: 4px solid #3b82f6;
+}
+
+.title-box .sub {
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+.title-box .now-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 4px;
+}
+
+.player-controls button {
+  border: none;
+  background: #f3f4f6;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.col {
+  background: var(--card);
+  padding: 12px;
+  border-radius: 12px;
+}
+
+.col h3 {
+  margin-top: 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.song-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.song {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: 0.12s;
+}
+
+.song:hover {
+  transform: translateY(-2px);
+}
+
+.song .name {
+  font-weight: 600;
+}
+
+.song .sub {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.badge {
+  font-size: 11px;
+  background: #f3f4f6;
+  padding: 4px 8px;
+  border-radius: 999px;
+}
+
+.song.selected {
+  border-color: var(--accent);
+  box-shadow: 0 6px 20px rgba(16,185,129,0.25);
+}
