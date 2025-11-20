@@ -89,6 +89,13 @@
 .controls button:hover {
   background-color: #0056b3;
 }
+/* Responsive cho mobile */
+@media (max-width: 768px) {
+  .controls button {
+    padding: 16px 24px;
+    font-size: 40px;
+  }
+}
 
 .playlist {
   margin-top: 20px;
