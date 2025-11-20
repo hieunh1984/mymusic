@@ -63,12 +63,31 @@
   background: black;
 }
 
-/* Căn giữa controls + playlist */
+/* Căn giữa controls + playlist và làm nút to hơn */
 .controls {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 15px;             /* khoảng cách giữa nút rộng hơn */
   flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.controls button {
+  padding: 12px 20px;       /* kích thước nút */
+  font-size: 32px;           /* emoji sẽ to theo nút */
+  border: none;
+  border-radius: 8px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.controls button:hover {
+  background-color: #0056b3;
 }
 
 .playlist {
