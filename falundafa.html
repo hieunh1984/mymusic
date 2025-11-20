@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Falun Dafa</title>
+<link rel="stylesheet" href="css/falundafa.css">
+<script src="common.js" defer></script>
+<script src="js/falundafa.js" defer></script>
+</head>
+<body>
+<div class="container">
+  <div class="topbar">
+    <h2 class="fancy-title"><p>轉法輪法解</p>
+        <p>FALUN DAFA</p>
+        <p>Pháp Luân Đại Pháp</p>
+    </h2>
+  </div>
+
+  <div id="right-btn" class="floating-btn" onclick="location.href='index.html'"></div>
+<style>
+/* Nút phải liên tục xoay */
+@keyframes spin-9-back-9 {
+  0%    { transform: rotate(0deg); }
+  25%   { transform: rotate(3240deg); }  /* 9 vòng * 360° */
+  50%   { transform: rotate(0deg); }     /* 9 vòng ngược */
+  75%   { transform: rotate(-3240deg); } /* 9 vòng thuận tiếp theo */
+  100%  { transform: rotate(0deg); }     /* lặp lại */
+}
+#right-btn {
+ top: 20px;
+  right: 20px;
+  background: url('icon/falun-logo.jpg') no-repeat center/contain;
+    position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  animation: spin-9-back-9 36s linear infinite; /* 20s cho toàn bộ 18 vòng */
+}
+</style>
+
+<div class="side-panel left">
+  <span>
+    Pháp<br> <br>Luân<br> <br>Đại<br> <br>Pháp<br> <br>hảo</span>
+</div>
+
+<div class="side-panel right">
+  <span>Chân<br> <br>Thiện<br> <br>Nhẫn<br> <br>hảo</span>
+</div>
+
+  <div class="player-wrap">
+    <div class="controls">
+      <div class="level-group">
+        <div class="label">Vui lòng chọn cấp độ bên dưới:</div>
+        <div class="levels">
+          <button class="level-btn" data-level="C1" aria-pressed="true">Cấp 1: Hạ sĩ-Trung sĩ</button>
+          <button class="level-btn" data-level="C2" aria-pressed="false">Cấp 2: Trung sĩ văn đạo</button>
+          <button class="level-btn" data-level="C3" aria-pressed="false">Cấp 3: Thượng sĩ văn đạo</button>
+        </div>
+      </div>
+
+      <div class="title-box">
+        <div class="sub">Tiêu đề bài đang phát</div>
+        <div class="now-title" id="nowTitle">— Chưa có bài được chọn —</div>
+      </div>
+
+      <div class="player-controls">
+        <button class="control-btn" id="prevBtn">⏮️</button>
+        <button class="control-btn" id="playBtn">▶️</button>
+        <button class="control-btn" id="nextBtn">⏭️</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid">
+
+    <!-- CỘT 1 -->
+    <section class="col">
+      <h3>Hạ sĩ-Trung sĩ</h3>
+      <div class="song-list">
+        <div class="song" data-id="c1-1" data-title="Bài 1 + 2 + 3" data-level="C1" data-src="falundafa/exercise134_30min31s.mp3">
+          <div class="meta"><div class="name">Bài 1-2-3</div><div class="sub">30:31</div></div>
+          <div class="badge">C1</div>
+        </div>
+        <div class="song" data-id="c1-2" data-title="Bài 5" data-level="C1" data-src="falundafa/exercise5_60min5s.mp3">
+          <div class="meta"><div class="name">Bài 5</div><div class="sub">60:05</div></div>
+          <div class="badge">C1</div>
+        </div>
+            </div>
+    </section>
+
+    <!-- CỘT 2 -->
+    <section class="col">
+      <h3>Trung sĩ văn đạo</h3>
+      <div class="song-list">
+        <div class="song" data-id="c2-1" data-title="Bài 1 + 2 + 3 + 4" data-level="C1" data-src="falundafa/exercise1234_60min45s.mp3">
+          <div class="meta"><div class="name">Bài 1-2-3-4</div><div class="sub">60:45</div></div>
+          <div class="badge">C2</div>
+     </div>
+        <div class="song" data-id="c2-2" data-title="Bài 5" data-level="C2" data-src="mfalundafa/exercise5_60min5s.mp3">
+          <div class="meta"><div class="name">Bài 5</div><div class="sub">60:05</div></div>
+          <div class="badge">C2</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CỘT 3 -->
+    <section class="col">
+      <h3>Thượng sĩ văn đạo</h3>
+      <div class="song-list">
+        <div class="song" data-id="c3-1" data-title="Bài 1" data-level="C3" data-src="falundafa/exercise1_9min14s.mp3">
+          <div class="meta"><div class="name">Bài 1</div><div class="sub">09:14</div></div>
+          <div class="badge">C3</div>
+        </div>
+        <div class="song" data-id="c3-2" data-title="Bài 2" data-level="C3" data-src="falundafa/exercise2_61min50s.mp3">
+          <div class="meta"><div class="name">Bài 2</div><div class="sub">61:50</div></div>
+          <div class="badge">C3</div>
+        </div>
+        <div class="song" data-id="c3-3" data-title="Bài 3" data-level="C3" data-src="falundafa/exercise3_8min50s.mp3">
+          <div class="meta"><div class="name">Bài 3</div><div class="sub">08:50</div></div>
+          <div class="badge">C3</div>
+        </div>
+        <div class="song" data-id="c3-4" data-title="Bài 4" data-level="C3" data-src="falundafa/exercise4_12min30s.mp3">
+          <div class="meta"><div class="name">Bài 4</div><div class="sub">04:12</div></div>
+          <div class="badge">C3</div>
+        </div>
+        <div class="song" data-id="c3-5" data-title="Bài 5" data-level="C3" data-src="falundafa/exercise5_60min5s.mp3">
+          <div class="meta"><div class="name">Bài 5</div><div class="sub">60:05</div></div>
+          <div class="badge">C3</div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- AUDIO PLAYER ẨN -->
+  <audio id="player"></audio>
+
+</div>
+</body>
+</html>

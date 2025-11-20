@@ -13,6 +13,31 @@
 </header>
 
 
+<!-- Nút nổi phải -->
+<div id="right-btn" class="floating-btn" onclick="location.href='falundafa.html'"></div>
+<style>
+/* Nút phải liên tục xoay */
+@keyframes spin-9-back-9 {
+  0%    { transform: rotate(0deg); }
+  25%   { transform: rotate(3240deg); }  /* 9 vòng * 360° */
+  50%   { transform: rotate(0deg); }     /* 9 vòng ngược */
+  75%   { transform: rotate(-3240deg); } /* 9 vòng thuận tiếp theo */
+  100%  { transform: rotate(0deg); }     /* lặp lại */
+}
+#right-btn {
+ top: 20px;
+  right: 20px;
+  background: url('icon/falun-logo.jpg') no-repeat center/contain;
+    position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  animation: spin-9-back-9 36s linear infinite; /* 20s cho toàn bộ 18 vòng */
+}
+</style>
+
+
 <main class="grid">
 <a class="card" href="lyricsvietsub.html">
 <h2>Nhạc lyrics + vietsub</h2>
