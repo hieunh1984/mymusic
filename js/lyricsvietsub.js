@@ -3,7 +3,8 @@ const playlist = [
   {id:1,title:'Only Time - Enya',src:'mp4/onlytime.mp4',type:'video',lyrics:'Lời bài hát\n(English lines...)',vietsub:'Bản dịch tiếng Việt của bài 1'},
   {id:2,title:'Forever Young - Alphaville',src:'mp4/foreveryoung.mp4',type:'video',lyrics:'Lời bài hát mẫu 2\n(Another line...)',vietsub:'Bản dịch tiếng Việt của bài 2'},
   {id:3,title:'Một Đường Nở Hoa (一路生花) - Ôn Dịch Tâm (温奕心)',src:'mp4/motduongnohoa.mp4',type:'video',lyrics:'Lời bài hát mẫu 3',vietsub:'Bản dịch bài 3'},
-  {id:4,title:'The Humming - Enya',src:'mp4/thehumming.mp4',type:'video',lyrics:'Lời bài hát mẫu 4',vietsub:'Bản dịch bài 4'}
+  {id:4,title:'The Humming - Enya',src:'mp4/thehumming.mp4',type:'video',lyrics:'Lời bài hát mẫu 4',vietsub:'Bản dịch bài 4'},
+  {id:5,title:'Nothing Gonna Change My Love For You - Westlife',src:'mp4/nothing.mp4',type:'video',lyrics:'Lời bài hát mẫu 5',vietsub:'Bản dịch bài 5'}
 ];
 
 let current = 0;
