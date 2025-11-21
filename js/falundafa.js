@@ -5,6 +5,9 @@ const playBtn = document.getElementById('playBtn');
 const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
 const player = document.getElementById('player');
+const seekBar = document.getElementById('seekBar');
+const currentTimeEl = document.getElementById('currentTime');
+const durationEl = document.getElementById('duration');
 
 let currentLevel = 'C1';
 let selectedSong = null;
@@ -12,7 +15,7 @@ let playing = false;
 
 // Update nút play/pause
 function updatePlayBtn() {
-  playBtn.textContent = playing ? '⏸' : '▶️';
+  playBtn.textContent = playing ? '⏸️' : '▶️';
 }
 
 // Lọc bài theo cấp độ
@@ -23,7 +26,10 @@ function getLevelSongs() {
 // Chọn bài
 function selectSong(song) {
   if (!song) return;
-  if (selectedSong) selectedSong.classList.remove('selected');
+
+  // Xóa selected ở tất cả bài
+  songs.forEach(s => s.classList.remove('selected'));
+
   selectedSong = song;
   selectedSong.classList.add('selected');
 
@@ -36,6 +42,16 @@ function selectSong(song) {
   playing = true;
   player.play();
   updatePlayBtn();
+
+  // 🟢 Cập nhật nút cấp độ tương ứng bài được chọn
+  const level = selectedSong.dataset.level;
+  currentLevel = level; // đồng bộ currentLevel
+  levelBtns.forEach(btn => btn.setAttribute('aria-pressed', btn.dataset.level === level));
+
+  // Mờ bài không cùng cấp độ
+  songs.forEach(s => {
+    s.style.opacity = s.dataset.level === level ? "1" : "0.45";
+  });
 }
 
 // Đổi cấp độ
@@ -116,3 +132,27 @@ levelBtns.forEach(btn => btn.addEventListener("click", () => setLevel(btn.datase
 // Khởi động
 setLevel(currentLevel);
 updatePlayBtn();
+
+// ----------------------
+// Thanh nhạc
+player.addEventListener('timeupdate', () => {
+  const progress = (player.currentTime / player.duration) * 100;
+  seekBar.value = progress || 0;
+
+  currentTimeEl.textContent = formatTime(player.currentTime);
+  durationEl.textContent = formatTime(player.duration);
+});
+
+// Khi người kéo thanh
+seekBar.addEventListener('input', () => {
+  const time = (seekBar.value / 100) * player.duration;
+  player.currentTime = time;
+});
+
+// Format thời gian hiển thị
+function formatTime(seconds) {
+  if (isNaN(seconds)) return "0:00";
+  const min = Math.floor(seconds / 60);
+  const sec = Math.floor(seconds % 60);
+  return `${min}:${sec < 10 ? '0'+sec : sec}`;
+}
