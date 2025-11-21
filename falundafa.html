@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Falun Dafa</title>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/falundafa.css">
 <script src="common.js" defer></script>
 <script src="js/falundafa.js" defer></script>
@@ -54,9 +55,9 @@
       <div class="level-group">
         <div class="label">Vui lòng chọn cấp độ bên dưới:</div>
         <div class="levels">
-          <button class="level-btn" data-level="C1" aria-pressed="true">Cấp 1: Hạ sĩ-Trung sĩ</button>
-          <button class="level-btn" data-level="C2" aria-pressed="false">Cấp 2: Trung sĩ văn đạo</button>
-          <button class="level-btn" data-level="C3" aria-pressed="false">Cấp 3: Thượng sĩ văn đạo</button>
+          <button class="level-btn" data-level="C1" aria-pressed="true">Cấp 1: Người mới</button>
+          <button class="level-btn" data-level="C2" aria-pressed="false">Cấp 2: Học viên</button>
+          <button class="level-btn" data-level="C3" aria-pressed="false">Cấp 3: Đệ tử</button>
         </div>
       </div>
 
@@ -64,6 +65,13 @@
         <div class="sub">Tiêu đề bài đang phát</div>
         <div class="now-title" id="nowTitle">— Chưa có bài được chọn —</div>
       </div>
+
+<!-- Thanh nhạc -->
+<div class="seek-container">
+  <span id="currentTime">0:00</span>
+  <input type="range" id="seekBar" value="0" min="0" max="100" step="0.1">
+  <span id="duration">0:00</span>
+</div>
 
       <div class="player-controls">
         <button class="control-btn" id="prevBtn">⏮️</button>
@@ -79,12 +87,18 @@
     <section class="col">
       <h3>Hạ sĩ-Trung sĩ</h3>
       <div class="song-list">
-        <div class="song" data-id="c1-1" data-title="Bài 1 + 2 + 3" data-level="C1" data-src="falundafa/exercise134_30min31s.mp3">
-          <div class="meta"><div class="name">Bài 1-2-3</div><div class="sub">30:31</div></div>
+        <div class="song" data-id="c1-1" data-title="Bài 1 + 3 + 4" data-level="C1" data-src="falundafa/exercise134_30min31s.mp3">
+          <div class="meta"><div class="name">Bài 1-3-4</div><div class="sub">30:31</div></div>
           <div class="badge">C1</div>
         </div>
-        <div class="song" data-id="c1-2" data-title="Bài 5" data-level="C1" data-src="falundafa/exercise5_60min5s.mp3">
-          <div class="meta"><div class="name">Bài 5</div><div class="sub">60:05</div></div>
+
+        <div class="song" data-id="c1-2" data-title="Bài 2" data-level="C1" data-src="falundafa/exercise2_29min55s.mp3">
+          <div class="meta"><div class="name">Bài 2</div><div class="sub">29:55</div></div>
+          <div class="badge">C1</div>
+        </div>
+
+        <div class="song" data-id="c1-3" data-title="Bài 5" data-level="C1" data-src="falundafa/exercise5-30min-st.mp3">
+          <div class="meta"><div class="name">Bài 5</div><div class="sub">27:27</div></div>
           <div class="badge">C1</div>
         </div>
             </div>
@@ -94,12 +108,12 @@
     <section class="col">
       <h3>Trung sĩ văn đạo</h3>
       <div class="song-list">
-        <div class="song" data-id="c2-1" data-title="Bài 1 + 2 + 3 + 4" data-level="C1" data-src="falundafa/exercise1234_60min45s.mp3">
+        <div class="song" data-id="c2-1" data-title="Bài 1 + 2 + 3 + 4" data-level="C2" data-src="falundafa/exercise1234_60min45s.mp3">
           <div class="meta"><div class="name">Bài 1-2-3-4</div><div class="sub">60:45</div></div>
           <div class="badge">C2</div>
      </div>
-        <div class="song" data-id="c2-2" data-title="Bài 5" data-level="C2" data-src="mfalundafa/exercise5_60min5s.mp3">
-          <div class="meta"><div class="name">Bài 5</div><div class="sub">60:05</div></div>
+        <div class="song" data-id="c2-2" data-title="Bài 5" data-level="C2" data-src="falundafa/exercise5-30min-st.mp3">
+          <div class="meta"><div class="name">Bài 5</div><div class="sub">27:27</div></div>
           <div class="badge">C2</div>
         </div>
       </div>
@@ -109,24 +123,24 @@
     <section class="col">
       <h3>Thượng sĩ văn đạo</h3>
       <div class="song-list">
-        <div class="song" data-id="c3-1" data-title="Bài 1" data-level="C3" data-src="falundafa/exercise1_9min14s.mp3">
+        <div class="song" data-id="c3-1" data-title="Bài 1" data-level="C3" data-src="https://media.falundafa.org/media1/media/dafa/exercise/320k/exercise_01.mp3">
           <div class="meta"><div class="name">Bài 1</div><div class="sub">09:14</div></div>
           <div class="badge">C3</div>
         </div>
-        <div class="song" data-id="c3-2" data-title="Bài 2" data-level="C3" data-src="falundafa/exercise2_61min50s.mp3">
-          <div class="meta"><div class="name">Bài 2</div><div class="sub">61:50</div></div>
+        <div class="song" data-id="c3-2" data-title="Bài 2" data-level="C3" data-src="falundafa/exercise2_29min55s.mp3">
+          <div class="meta"><div class="name">Bài 2</div><div class="sub">29:55</div></div>
           <div class="badge">C3</div>
         </div>
-        <div class="song" data-id="c3-3" data-title="Bài 3" data-level="C3" data-src="falundafa/exercise3_8min50s.mp3">
-          <div class="meta"><div class="name">Bài 3</div><div class="sub">08:50</div></div>
+        <div class="song" data-id="c3-3" data-title="Bài 3" data-level="C3" data-src="https://media.falundafa.org/media1/media/dafa/exercise/320k/exercise_03.mp3">
+          <div class="meta"><div class="name">Bài 3</div><div class="sub">08:49</div></div>
           <div class="badge">C3</div>
         </div>
-        <div class="song" data-id="c3-4" data-title="Bài 4" data-level="C3" data-src="falundafa/exercise4_12min30s.mp3">
-          <div class="meta"><div class="name">Bài 4</div><div class="sub">04:12</div></div>
+        <div class="song" data-id="c3-4" data-title="Bài 4" data-level="C3" data-src="https://media.falundafa.org/media1/media/dafa/exercise/320k/exercise_04.mp3">
+          <div class="meta"><div class="name">Bài 4</div><div class="sub">12:37</div></div>
           <div class="badge">C3</div>
         </div>
-        <div class="song" data-id="c3-5" data-title="Bài 5" data-level="C3" data-src="falundafa/exercise5_60min5s.mp3">
-          <div class="meta"><div class="name">Bài 5</div><div class="sub">60:05</div></div>
+        <div class="song" data-id="c3-5" data-title="Bài 5" data-level="C3" data-src="https://media.falundafa.org/media1/media/dafa/exercise/320k/exercise_05.mp3">
+          <div class="meta"><div class="name">Bài 5</div><div class="sub">60:03</div></div>
           <div class="badge">C3</div>
         </div>
       </div>

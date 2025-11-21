@@ -1,14 +1,36 @@
 :root{--bg:#0f1724;--card:#0b1220;--accent:#7c3aed;--muted:#9aa4b2;--glass:rgba(255,255,255,0.03)}
 *{box-sizing:border-box}
-body{font-family:Inter, system-ui, sans-serif;margin:0;background:linear-gradient(180deg,#071026 0%, #0f1724 100%);color:#e6eef8;min-height:100vh;display:flex;flex-direction:column}
+body{
+  font-family:Inter, system-ui, sans-serif;margin:0;
+  background: url('icon/vutruhoc.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color:#e6eef8;min-height:100vh;display:flex;flex-direction:column}
 .site-header{padding:28px 20px;text-align:center}
 .site-header h1{margin:0;font-size:clamp(20px,4vw,36px);letter-spacing:0.6px}
 .tagline{color:var(--muted);margin-top:6px}
 .grid{display:grid;gap:18px;padding:18px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));max-width:1100px;margin:0 auto}
-.card{display:block;background:var(--card);padding:18px;border-radius:12px;text-decoration:none;color:inherit;box-shadow:0 6px 18px rgba(0,0,0,0.6);transition:transform .18s ease,box-shadow .18s}
+.card{
+  background-image: url('icon/musicgalaxy.jpg');
+    background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* canh dọc */
+  align-items: center;     /* canh ngang */
+  text-align: center;
+  
+  /* Giữ overlay để chữ vẫn rõ */
+  background-blend-mode: overlay;
+  background-color: rgba(255,255,255,0.55);
+  
+  padding:18px;border-radius:12px;text-decoration:none;color:inherit;box-shadow:0 6px 18px rgba(0,0,0,0.6);transition:transform .18s ease,box-shadow .18s}
 .card:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(0,0,0,0.6)}
-.card h2{margin:0 0 6px 0}
-.card p{margin:0;color:var(--muted);font-size:14px}
+.card h2{margin:0 0 6px 0;
+  color: #fff;
+}
+.card p{margin:0;color:var(--muted);font-size:14px;color: #fff;        /* chữ trắng */}
 .site-footer{text-align:center;padding:16px;color:var(--muted);margin-top:auto}
 
 .floating-btn {
@@ -135,6 +157,9 @@ body{font-family:Inter, system-ui, sans-serif;margin:0;background:linear-gradien
     overflow-x: hidden; /* NGĂN TRÀN NGANG */
   }
 
+  .title{
+    font-size: 14px;
+  }
   .grid {
     padding: 12px;
     gap: 12px;
