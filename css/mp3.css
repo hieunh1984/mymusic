@@ -108,7 +108,7 @@ body{
   display: flex;
   flex-direction: column;
   gap: 6px;
-  align-items: center;
+  align-items: flex-start; /* ⬅ canh trái toàn bộ playlist */
 }
 /* Chỉnh chữ trong playlist */
 .playlist a,
@@ -118,7 +118,7 @@ body{
   font-size: 20px;            /* chữ to */
   font-weight: 700;           /* đậm */
   color: #cae439;             /* xanh đậm đen */
-  text-align: center;         /* canh giữa (nếu có chữ dài) */
+   text-align: left;     /* canh trái */
 }
 .track {
   width: 100%;
