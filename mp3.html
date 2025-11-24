@@ -4,14 +4,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Nhạc mp3 — Âm nhạc không biên giới</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/mp3.css">
 <script src="common.js" defer></script>
 </head>
 <body>
 <div class="container">
 <div class="topbar">
-<h2>Nhạc mp3</h2>
-<div><a class="btn" href="index.html">← Về trang chính</a></div>
+    <div><a class="btn" href="index.html">🏠</a></div>
+    <h2 class="fancy-title">
+    <span class="heart">❤️</span>
+        Nhạc MP3
+    <span class="butterfly">🦋</span> 
+  </h2>
 </div>
 
 
@@ -20,7 +24,7 @@
 <div class="controls">
 <button class="btn" id="mp3Prev">Prev</button>
 <button class="btn" id="mp3Next">Next</button>
-<button class="btn" id="mp3Shuffle">Ngẫu nhiên</button>
+<button class="btn" id="mp3Shuffle"> ⚡ </button>
 </div>
 <div class="playlist" id="mp3List"></div>
 </div>
@@ -29,8 +33,10 @@
 
 <script>
 const mp3s = [
-{title:'MP3 Mẫu A',src:'media/song1.mp3'},
-{title:'MP3 Mẫu B',src:'media/song2.mp3'}
+{title:'Past lives - Sapientdream',src:'mp3/Pastlives.mp3'},
+{title:'IMAGINE-John Lennon',src:'mp3/IMAGINE-John Lennon.mp3'},
+{title:'Reality - Lost Frequencies',src:'mp3/Reality.mp3'},
+{title:'My Soul Longs for You - Jesus Culture - Bethel Prayer Meeting',src:'mp3/mslfu.mp3'}
 ];
 const mp3Player = document.getElementById('mp3Player');
 const mp3List = document.getElementById('mp3List');
