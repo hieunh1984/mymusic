@@ -3,19 +3,45 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Clips của tôi — Âm nhạc không biên giới</title>
-<link rel="stylesheet" href="style.css">
+<title>My Clips — Âm nhạc không biên giới</title>
+<link rel="stylesheet" href="css/lyricsvietsub.css">
+<link rel="stylesheet" href="css/videos.css">
 <script src="common.js" defer></script>
+<script src="js/clips.js" defer></script>
 </head>
 <body>
 <div class="container">
-<div class="topbar">
-<h2>Clips của tôi</h2>
-<div><a class="btn" href="index.html">🤫</a></div>
-</div>
+  <div class="topbar">
+       <div><a class="btn" href="index.html">🏠</a></div>
+    <h2 class="fancy-title">
+    <span class="heart">❤️</span>
+        My Clips
+    <span class="butterfly">🦋</span> 
+  </h2>
+  </div>
 
+  <div class="player" id="playerBox">
+    <video id="videoPlayer" width="100%" controls style="display:none;border-radius:10px;background:black"></video>
+    <audio id="audioPlayer" controls style="display:none;width:100%"></audio>
 
-</div>
+    <div class="controls">
+      <button class="btn" id="prevBtn">⏮️</button>
+      <button class="btn" id="playBtn">▶️</button>
+      <button class="btn" id="pauseBtn">⏸️</button>
+      <button class="btn" id="nextBtn">⏭️</button>
+      <button class="btn" id="replayBtn">🔄️</button>
+      <button class="btn" id="seqBtn">🙏</button>
+      <button class="btn" id="shfBtn">⚡</button>
+    </div>
+
+    <div class="meta-row">
+      <div class="meta">Bài hiện tại: <strong id="currentTitle">—</strong></div>
+      <div class="meta">Trạng thái: <span id="status">idle</span></div>
+    </div>
+
+    <div class="lyrics-box" id="lyricsBox">Chưa có lời...</div>
+    <div class="playlist" id="playlist"></div>
+  </div>
 </div>
 </body>
 </html>
