@@ -14,7 +14,8 @@ Decisions as I go, to anywhere I flow
     vietsub: "..."
 },
   {id:5,title:'The Humming - Enya',src:'mp4/thehumming.mp4',type:'video',lyrics:'...',vietsub:'...'},
-  {id:6,title:'Nothing Gonna Change My Love For You - Westlife',src:'mp4/nothing.mp4',type:'video',lyrics:'...',vietsub:'...'}
+  {id:6,title:'Nothing Gonna Change My Love For You - Westlife',src:'mp4/nothing.mp4',type:'video',lyrics:'...',vietsub:'...'},
+   {id:7,title:'Disturbed - The Sound of Silence',src:'mp4/TheSoundofSilence.mp4',type:'video',lyrics:'...',vietsub:'...'}
 ];
 
 let current = 0;
