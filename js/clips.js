@@ -1,20 +1,6 @@
 // Sample playlist
 const playlist = [
-  {id:1,title:'Only Time - Enya',src:'mp4/onlytime.mp4',type:'video',lyrics:'Lời bài hát\n(English lines...)',vietsub:'...'},
-  {id:2,title:'Forever Young - Alphaville',src:'mp4/foreveryoung.mp4',type:'video',lyrics:'...\n(Another line...)',vietsub:'...'},
-  {id:3,title:'Một Đường Nở Hoa (一路生花) - Ôn Dịch Tâm (温奕心)',src:'mp4/motduongnohoa.mp4',type:'video',lyrics:'...',vietsub:'...'},
-{    id: 4,
-    title: "Reality - Lost Frequencies ft. Janieck Devy",
-    src: "mp4/Reality.mp4",
-    type: "video",
-    lyrics: `I can fly high, I can go low
-Today I got a million, tomorrow I don't know
-Decisions as I go, to anywhere I flow
-...`,
-    vietsub: "..."
-},
-  {id:5,title:'The Humming - Enya',src:'mp4/thehumming.mp4',type:'video',lyrics:'...',vietsub:'...'},
-  {id:6,title:'Nothing Gonna Change My Love For You - Westlife',src:'mp4/nothing.mp4',type:'video',lyrics:'...',vietsub:'...'}
+   {id:1,title:'Thế Nhân Tỉnh - 世人醒',src:'videos/TheNhanTinh.mp4',type:'video'}
 ];
 
 let current = 0;
