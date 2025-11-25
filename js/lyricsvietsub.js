@@ -2,7 +2,8 @@
 const playlist = [
   {id:1,title:'Only Time - Enya',src:'mp4/onlytime.mp4',type:'video',lyrics:'Lời bài hát\n(English lines...)',vietsub:'...'},
   {id:2,title:'Forever Young - Alphaville',src:'mp4/foreveryoung.mp4',type:'video',lyrics:'...\n(Another line...)',vietsub:'...'},
-  {id:3,title:'Một Đường Nở Hoa (一路生花) - Ôn Dịch Tâm (温奕心)',src:'mp4/motduongnohoa.mp4',type:'video',lyrics:'...',vietsub:'...'},
+  {id:3,title:'Leave Out All The Rest - Linkin Park',src:'mp4/LeaveOutAllTheRest.mp4',type:'video',lyrics:'...',vietsub:'...'},
+    
 {    id: 4,
     title: "Reality - Lost Frequencies ft. Janieck Devy",
     src: "mp4/Reality.mp4",
@@ -14,8 +15,10 @@ Decisions as I go, to anywhere I flow
     vietsub: "..."
 },
   {id:5,title:'The Humming - Enya',src:'mp4/thehumming.mp4',type:'video',lyrics:'...',vietsub:'...'},
-  {id:6,title:'Nothing Gonna Change My Love For You - Westlife',src:'mp4/nothing.mp4',type:'video',lyrics:'...',vietsub:'...'},
-   {id:7,title:'Disturbed - The Sound of Silence',src:'mp4/TheSoundofSilence.mp4',type:'video',lyrics:'...',vietsub:'...'}
+  {id:6,title:'Bring Me To Life - Evanescence',src:'mp4/BringMeToLife.mp4',type:'video',lyrics:'...',vietsub:'...'},
+   {id:7,title:'Disturbed - The Sound of Silence',src:'mp4/TheSoundofSilence.mp4',type:'video',lyrics:'...',vietsub:'...'},
+{id:8,title:'Một Đường Nở Hoa (一路生花) - Ôn Dịch Tâm (温奕心)',src:'mp4/motduongnohoa.mp4',type:'video',lyrics:'...',vietsub:'...'},
+{id:9,title:'Mad World - Gary Jules',src:'mp4/MadWorld.mp4',type:'video',lyrics:'...',vietsub:'...'}
 ];
 
 let current = 0;
